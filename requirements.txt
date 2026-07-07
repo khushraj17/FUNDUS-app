@@ -1,6 +1,5 @@
 pandas 
 numpy
 streamlit
-scikit-learn
-pickle
+scikit-learn==1.5.1
 plotly
