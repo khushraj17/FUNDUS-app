@@ -222,5 +222,4 @@ fig5 = px.imshow(
 
 
 st.plotly_chart(fig2, use_container_width=True)
-st.plotly_chart(fig4, use_container_width=True)
 st.plotly_chart(fig5, use_container_width=True)
