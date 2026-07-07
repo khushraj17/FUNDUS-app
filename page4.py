@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+from streamlit_extras.stylable_container import stylable_container
 
 
 st.set_page_config(
@@ -43,8 +44,7 @@ def recommend_properties_with_scores(property_name, top_n=247):
     
     return recommendations_df
 
-# Test the recommender function using a property name
-recommend_properties_with_scores('Ireo Victory Valley')
+
 
 # st.markdown("""
 # <style>
@@ -89,6 +89,7 @@ if search :
 
 #-------------------------------
 
+
 if "result_ser" in st.session_state:
 
     st.subheader("Nearby Properties")
@@ -99,15 +100,26 @@ if "result_ser" in st.session_state:
 
     else:
 
-        for property_name, distance in st.session_state.result_ser.items():
+        top5 = st.session_state.result_ser.head(5)
 
-            if st.button(
-                f"🏠 {property_name}\n\n📍 {distance:.2f} km",
-                key=f"btn_{property_name}"
-            ):
+        cols = st.columns(5)
 
-                st.session_state.selected_property = property_name
-                st.text("ss mai prop gai")
+        for i, (property_name, distance) in enumerate(top5.items()):
+            
+            with cols[i]:
+                
+                with stylable_container(key=f"btn_{property_name}",css_styles="""
+                                        button {
+                                        height:170px;
+                                        border-radius:15px;
+                                        }"""
+                                        
+                                        ):
+                    if st.button( f"🏠\n{property_name}\n📍 {distance:.2f} km",
+                                 key=f"btn_{property_name}",
+                                 use_container_width=True
+                    ):
+                        st.session_state.selected_property = property_name
 
 if (
     "selected_property" in st.session_state
@@ -116,17 +128,46 @@ if (
 
     st.divider()
 
-    st.subheader(
+    st.markdown("## ⭐ Selected Property")
+
+    with stylable_container(
+                        key="selected",
+                        css_styles="""
+                        {
+                            border:3px solid #ff4b4b;
+                            border-radius:18px;
+                            padding:20px;
+                            background:violet;
+                        }
+                        """
+                    ):
+                        st.markdown(f"## 🏠 {st.session_state.selected_property}")
+
+    st.text(
         f"Recommended for : {st.session_state.selected_property}"
-    )
+    )      
 
-    recommendations = recommend_properties_with_scores(
-        st.session_state.selected_property
-    )
+    recommendations = recommend_properties_with_scores(st.session_state.selected_property).head(10)
 
-    st.dataframe(
-        recommendations,
-        use_container_width=True,
-        hide_index=True
-    )
+    
+    cols = st.columns(5)
 
+    for i , row in recommendations.iterrows():
+
+        with cols[i%5]:
+            with stylable_container(key=f"rec_{row['PropertyName']}",css_styles="""
+                                        button {
+                                        height:170px;
+                                        border-radius:15px;
+                                        padding:20px;
+                                        }"""
+                                        
+                                        ):
+                if st.button(
+                    f"🏠 {row['PropertyName']}\n\nView More..",
+                    key=f"rec_{row['PropertyName']}",
+                    use_container_width=True
+                ):
+                    st.session_state.selected_property = row["PropertyName"]
+                    st.rerun()
+                    
