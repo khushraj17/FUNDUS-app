@@ -115,7 +115,7 @@ if "result_ser" in st.session_state:
                                         }"""
                                         
                                         ):
-                    if st.button( f"🏠\n{property_name}\n📍 {distance:.2f} km",
+                    if st.button( f"🏠\n{property_name}\n📍 {distance:.2f} km\n",
                                  key=f"btn_{property_name}",
                                  use_container_width=True
                     ):
