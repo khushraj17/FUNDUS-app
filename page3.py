@@ -177,6 +177,8 @@ st.success(f"""
 st.divider()
 
 
+st.divider()
+st.markdown("## 💰 Most Expensive Sectors")
 
 sector_price = (
     df.groupby("sector")["price"]
@@ -187,39 +189,47 @@ sector_price = (
 
 fig2 = px.bar(
     sector_price,
-    color=sector_price.index,
-    title="Top 15 Expensive Sectors"
+    color=sector_price.index
 )
 
 
-fig4 = px.sunburst(
-    df,
-    path=["luxury_category", "property_type"],
-    values="price",
-    color="price",
-    color_continuous_scale="Blues",
-    title="Luxury Category and Property Type Distribution"
-)
+st.plotly_chart(fig2, use_container_width=True)
 
-fig4.update_traces(
-    hovertemplate=
-    "<b>%{label}</b><br>"
-    "Total Price : ₹%{value:.2f} Cr<br>"
-    "Parent : %{parent}<br>"
-    "Percentage : %{percentParent:.2%}<br>"
-    "<extra></extra>"
-)
 
+st.caption("""
+This chart displays the **top 15 sectors with the highest average property prices**.
+It helps users quickly identify the most premium residential areas in Gurgaon, making it useful for
+market analysis, investment decisions, and comparing high-value locations.
+""")
+
+st.divider()
+
+st.markdown("## 🔥 Correlation Heatmap")
+
+st.markdown("""
+The correlation heatmap visualizes the relationship between numerical features in the dataset.
+Correlation values range from **-1 to +1**:
+
+- **+1** → Strong positive correlation (both variables increase together)
+- **0** → No linear relationship
+- **-1** → Strong negative correlation (one variable increases while the other decreases)
+
+This analysis helps identify the features that have the greatest influence on property prices and can assist in feature selection for machine learning models.
+""")
 
 corr = df.select_dtypes("number").corr()
 
 fig5 = px.imshow(
     corr,
     text_auto=True,
-    color_continuous_scale="reds",
-    aspect="auto"
+    color_continuous_scale="Reds",
+    aspect="auto",
+    title="Correlation Matrix of Numerical Features"
 )
 
-
-st.plotly_chart(fig2, use_container_width=True)
 st.plotly_chart(fig5, use_container_width=True)
+
+st.info(
+    "💡 **Insight:** Features with correlation values closer to **+1** or **-1** have stronger relationships. "
+    "The diagonal values are always **1.0** because each feature is perfectly correlated with itself."
+)
