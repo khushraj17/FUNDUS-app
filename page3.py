@@ -180,6 +180,12 @@ st.divider()
 st.divider()
 st.markdown("## 💰 Most Expensive Sectors")
 
+st.caption("""
+This chart displays the **top 15 sectors with the highest average property prices**.
+It helps users quickly identify the most premium residential areas in Gurgaon, making it useful for
+market analysis, investment decisions, and comparing high-value locations.
+""")
+
 sector_price = (
     df.groupby("sector")["price"]
       .mean()
@@ -195,12 +201,14 @@ fig2 = px.bar(
 
 st.plotly_chart(fig2, use_container_width=True)
 
-
-st.caption("""
-This chart displays the **top 15 sectors with the highest average property prices**.
-It helps users quickly identify the most premium residential areas in Gurgaon, making it useful for
-market analysis, investment decisions, and comparing high-value locations.
-""")
+st.info(
+    """
+    **Insight:** This visualization ranks the top 15 sectors based on their average property prices.
+    Higher average prices generally indicate premium locations with better infrastructure,
+    amenities, connectivity, and stronger market demand. Investors and homebuyers can use this
+    analysis to identify luxury real estate hotspots in Gurgaon.
+    """
+)
 
 st.divider()
 
@@ -223,8 +231,7 @@ fig5 = px.imshow(
     corr,
     text_auto=True,
     color_continuous_scale="Reds",
-    aspect="auto",
-    title="Correlation Matrix of Numerical Features"
+    aspect="auto"
 )
 
 st.plotly_chart(fig5, use_container_width=True)
