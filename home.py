@@ -1,12 +1,7 @@
 import streamlit as st
+from streamlit_float import *
 
-st.set_page_config(
-    page_title="Real Estate Investment Analyst",
-    page_icon="🏡",
-    layout="wide"
-)
-
-st.title("🏡 Real Estate Investment Analyst")
+st.title("🏡 FUNDUS")
 
 st.markdown("""
 ### Predict • Analyze • Invest
