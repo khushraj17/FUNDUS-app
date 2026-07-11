@@ -1,6 +1,6 @@
 import streamlit as st
 from component.ai_assistant import render_ai
-
+from component.footer import render_footer
 
 st.set_page_config(
     page_title="FUNDUS",
@@ -26,3 +26,6 @@ pg = st.navigation(
 )
 
 pg.run()
+
+render_ai()
+render_footer()
