@@ -4,3 +4,4 @@ streamlit
 scikit-learn==1.5.1
 plotly
 streamlit-extras
+streamlit-float
