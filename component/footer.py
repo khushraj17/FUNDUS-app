@@ -2,7 +2,7 @@ import streamlit as st
 
 def render_footer():
 
-    st.markdown("""
+    st.html("""
     <style>
 
     .footer{
