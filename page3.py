@@ -176,8 +176,6 @@ st.success(f"""
 
 st.divider()
 
-
-st.divider()
 st.markdown("## 💰 Most Expensive Sectors")
 
 st.caption("""
@@ -240,3 +238,5 @@ st.info(
     "💡 **Insight:** Features with correlation values closer to **+1** or **-1** have stronger relationships. "
     "The diagonal values are always **1.0** because each feature is perfectly correlated with itself."
 )
+
+#----------------------------------------------------------
