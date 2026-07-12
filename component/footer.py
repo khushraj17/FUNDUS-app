@@ -8,7 +8,7 @@ def render_footer():
     .footer{
         margin-top:70px;
         padding:35px 25px 20px 25px;
-        border-top:1px solid rgba(255,255,255,.12);
+        # border-top:1px solid rgba(255,255,255,.12);
     }
 
     .footer-bottom{
