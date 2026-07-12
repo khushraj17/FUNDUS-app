@@ -49,7 +49,7 @@ st.markdown("""
 def load_artifacts():
     with open('df.pkl', 'rb') as file:
         df = pickle.load(file)
-    with open('ETRmodel.pkl', 'rb') as file:
+    with open('ETRmodel2.pkl', 'rb') as file:
         model = pickle.load(file)
     return df, model
 
