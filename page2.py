@@ -47,13 +47,13 @@ st.markdown("""
 
 @st.cache_resource
 def load_artifacts():
-    with open('df.pkl', 'rb') as file:
-        df = pickle.load(file)
-    with open('ETRmodel2.pkl', 'rb') as file:
+    with open('ETRmodel4.pkl', 'rb') as file:
         model = pickle.load(file)
-    return df, model
+    return model
 
-df, model = load_artifacts()
+
+with open('df.pkl', 'rb') as file:
+    df = pickle.load(file)
 
 
 st.sidebar.info(
@@ -126,7 +126,8 @@ if submitted:
         "luxury_category": [luxury_category],
         "floor_category": [floor_category]
     })
-
+    
+    model = load_artifacts()
     with st.spinner("Calculating estimate..."):
         base_price = np.expm1(model.predict(input_df))[0]
         low = base_price - 0.11
