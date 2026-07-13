@@ -111,6 +111,7 @@ with st.form("prediction_form"):
     submitted = st.form_submit_button("🔮 Predict Price")
 
 
+model = load_artifacts()
 if submitted:
     input_df = pd.DataFrame({
         "property_type": [property_type],
@@ -127,7 +128,6 @@ if submitted:
         "floor_category": [floor_category]
     })
     
-    model = load_artifacts()
     with st.spinner("Calculating estimate..."):
         base_price = np.expm1(model.predict(input_df))[0]
         low = base_price - 0.11
