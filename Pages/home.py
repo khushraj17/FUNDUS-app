@@ -59,3 +59,43 @@ st.info(
     "This application predicts property prices using Machine Learning "
     "and helps users make informed real estate investment decisions."
 )
+
+st.divider()
+
+st.subheader("⚙️ Machine Learning Workflow")
+
+steps = [
+    ("📂", "Raw Data"),
+    ("🧹", "Data Cleaning"),
+    ("⚙️", "Feature Engineering"),
+    ("🔄", "Preprocessing"),
+    ("🤖", "ExtraTrees Model"),
+    ("💰", "Price Prediction"),
+]
+
+cols = st.columns(len(steps))
+
+for col, (icon, text) in zip(cols, steps):
+    with col:
+        st.markdown(
+            f"""
+            <div style="
+                text-align:center;
+                padding:20px;
+                border-radius:15px;
+                border:1px solid #333;
+                background:#1E1E1E;
+            ">
+                <h1>{icon}</h1>
+                <b>{text}</b>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
+
+for i in range(len(steps)-1):
+    if i != len(steps)-2:
+        st.markdown(
+            "<div style='text-align:center;font-size:28px;'>⬇️</div>",
+            unsafe_allow_html=True,
+        )
