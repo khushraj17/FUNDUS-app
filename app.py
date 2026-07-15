@@ -8,10 +8,10 @@ st.set_page_config(
     layout="wide"
 )
 
-home = st.Page("home.py", title="Home", icon="🏠")
-analytics = st.Page("page2.py", title="Price Prediction", icon="📈")
-prediction = st.Page("page3.py", title="Analysis", icon="📊")
-recommendation = st.Page("page4.py", title="Recommendation", icon="🏘️")
+home = st.Page("Pages\home.py", title="Home", icon="🏠")
+analytics = st.Page("Pages\page2.py", title="Price Prediction", icon="📈")
+prediction = st.Page("Pages\page3.py", title="Analysis", icon="📊")
+recommendation = st.Page("Pages\page4.py", title="Recommendation", icon="🏘️")
 
 pg = st.navigation(
     {
