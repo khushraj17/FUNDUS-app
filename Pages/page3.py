@@ -4,8 +4,8 @@ import plotly.express as px
 import pickle
 import numpy as np
 
-df = pd.read_csv("data.csv")
-df1 = pd.read_csv("final_data.csv")
+df = pd.read_csv("data/data.csv")
+df1 = pd.read_csv("data/final_data.csv")
 
 st.set_page_config(
     page_title="Analysis",
