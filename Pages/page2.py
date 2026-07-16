@@ -52,7 +52,7 @@ def load_artifacts():
     return model
 
 
-with open('data/pickle_file/df.pkl', 'rb') as file:
+with open('data/pickle_files/df.pkl', 'rb') as file:
     df = pickle.load(file)
 
 
@@ -133,7 +133,6 @@ if submitted:
         low = base_price - 0.11
         high = base_price + 0.11
 
-    st.markdown("---")
     res_col1, res_col2, res_col3 = st.columns([1, 4, 1])
     with res_col2:
         st.success(
