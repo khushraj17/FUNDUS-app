@@ -47,12 +47,12 @@ st.markdown("""
 
 @st.cache_resource
 def load_artifacts():
-    with open('ETRmodel4.pkl', 'rb') as file:
+    with open('Models/ETRmodel4.pkl', 'rb') as file:
         model = pickle.load(file)
     return model
 
 
-with open('df.pkl', 'rb') as file:
+with open('data/pickle_file/df.pkl', 'rb') as file:
     df = pickle.load(file)
 
 
