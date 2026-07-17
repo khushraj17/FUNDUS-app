@@ -13,7 +13,7 @@ Built using **Python**, **Streamlit**, **Scikit-learn**, and **Plotly**, FUNDUS 
 - User-friendly prediction interface.
 - Supports multiple property features.
 
-<!-- ### 🤖 Property Recommendation System
+### 🤖 Property Recommendation System
 - Hybrid recommendation engine.
 - Location-aware property recommendations.
 - Explore similar properties with one click.
@@ -44,6 +44,7 @@ Built using **Python**, **Streamlit**, **Scikit-learn**, and **Plotly**, FUNDUS 
 The recommendation engine combines three similarity matrices into a hybrid similarity score.
 
 ```
+<!-- 
 Final Score
 
 = (0.5 × Cosine Similarity Matrix 1)
@@ -55,7 +56,7 @@ This approach improves recommendation quality by considering multiple property c
 
 ---
 
-# 🛠 Tech Stack
+<!-- # 🛠 Tech Stack
 
 | Category | Technologies |
 |----------|--------------|
@@ -203,6 +204,6 @@ GitHub: https://github.com/khushraj17
 
 ## ⭐ If you like this project
 
-If you found this project useful, please consider giving it a **⭐ Star** on GitHub.
+If you found this project useful, please consider giving it a **⭐ Star** on GitHub. 
 
 It helps support the project and motivates future improvements. -->
