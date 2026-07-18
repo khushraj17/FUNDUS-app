@@ -1,100 +1,192 @@
-# 🏡 FUNDUS – AI-Powered Real Estate Analytics & Recommendation System
+# 🏡 FUNDUS
 
-FUNDUS is an intelligent real estate platform that combines **Machine Learning**, **Data Analytics**, and **Interactive Visualization** to help users analyze the Gurgaon real estate market, predict property prices, and discover similar properties using an AI-powered recommendation engine.
+<p align="center">
 
-Built using **Python**, **Streamlit**, **Scikit-learn**, and **Plotly**, FUNDUS provides an intuitive interface for buyers, investors, and real estate enthusiasts to explore properties more effectively.
+### AI-Powered Real Estate Intelligence Platform
 
----
+Predict property prices, analyze market trends, and discover similar properties using Machine Learning.
 
-## 🚀 Features
+</p>
 
-### 🏠 Property Price Prediction
-- Predict property prices using a trained Machine Learning model.
-- User-friendly prediction interface.
-- Supports multiple property features.
+<p align="center">
 
-### 🤖 Property Recommendation System
-- Hybrid recommendation engine.
-- Location-aware property recommendations.
-- Explore similar properties with one click.
-- Uses weighted cosine similarity.
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 
-### 📍 Location-Based Search
-- Search nearby properties within a custom radius.
-- Distance-based filtering.
-- Interactive property exploration.
-
-### 📊 Real Estate Analytics
-- Interactive charts and graphs.
-- Price distribution analysis.
-- Sector-wise insights.
-- Feature correlation analysis.
-- Market trend visualization.
-
-### 🎨 Modern Streamlit UI
-- Multi-page application.
-- Responsive design.
-- Interactive property cards.
-- Easy navigation.
+</p>
 
 ---
 
-# 🧠 Recommendation Engine
+## 📖 Overview
 
-The recommendation engine combines three similarity matrices into a hybrid similarity score.
+FUNDUS is an end-to-end Machine Learning application built for real estate price prediction and property analytics.
+
+The application predicts property prices in **Gurugram** using machine learning while providing rich visual analytics, interactive dashboards, investment insights, and an intelligent property recommendation system.
+
+Designed as a portfolio-quality project, FUNDUS combines data science, machine learning, visualization, and web development into a single application.
+
+---
+
+# ✨ Features
+
+### 💰 Property Price Prediction
+
+Predict property prices using an optimized **ExtraTrees Regressor** pipeline.
+
+- Price estimation
+- Log-transformed predictions
+- Realistic valuation
+
+---
+
+### 📊 Interactive Analytics Dashboard
+
+Explore the real estate market through interactive visualizations.
+
+- Price Distribution
+- Sector-wise Price Analysis
+- Feature Correlation Heatmap
+- BHK Distribution
+- Price vs Area Analysis
+- Interactive Charts
+
+---
+
+### 🏘️ Smart Property Recommendation
+
+Find similar properties using a hybrid similarity engine.
+
+The recommendation system combines multiple similarity matrices including:
+
+- Location Similarity
+- Feature Similarity
+- Price Similarity
+
+to recommend the most relevant properties.
+
+---
+
+### 📍 Nearby Property Search
+
+Search properties within a custom radius from any selected location.
+
+Features include
+
+- Radius Search
+- Distance Calculation
+- Nearby Properties
+- Interactive Selection
+
+---
+
+### 📈 Investment Insights
+
+Provides useful information for buyers and investors including
+
+- Market Trends
+- Expensive Sectors
+- Feature Importance
+- Property Comparison
+
+---
+
+# 🧠 Machine Learning Pipeline
 
 ```
-<!-- 
-Final Score
-
-= (0.5 × Cosine Similarity Matrix 1)
-+ (0.8 × Cosine Similarity Matrix 2)
-+ (1.0 × Cosine Similarity Matrix 3)
+Raw Data
+      │
+      ▼
+Data Cleaning
+      │
+      ▼
+Feature Engineering
+      │
+      ▼
+Column Transformer
+      │
+      ├── Standard Scaler
+      ├── Ordinal Encoder
+      ├── One Hot Encoder
+      └── Target Encoder
+      │
+      ▼
+ExtraTrees Regressor
+      │
+      ▼
+Price Prediction
 ```
-
-This approach improves recommendation quality by considering multiple property characteristics.
-
----
-
-<!-- # 🛠 Tech Stack
-
-| Category | Technologies |
-|----------|--------------|
-| Language | Python |
-| Frontend | Streamlit |
-| Machine Learning | Scikit-learn |
-| Data Processing | Pandas, NumPy |
-| Visualization | Plotly |
-| Model Storage | Pickle |
-| Development | Jupyter Notebook |
 
 ---
 
 # 📂 Project Structure
 
 ```
-FUNDUS-app/
+FUNDUS
 │
 ├── app.py
-├── page1.py
-├── page2.py
-├── page3.py
-├── page4.py
+├── Pages/
+│   ├── home.py
+│   ├── page2.py
+│   ├── page3.py
+│   └── page4.py
 │
-├── location_df.pkl
-├── cosine_sim1.pkl
-├── cosine_sim2.pkl
-├── cosine_sim3.pkl
-├── ETRmodel.pkl
+├── component/
+│
+├── Models/
+│
+├── notebooks/
+│
+├── Data/
+│
+├── assets/
 │
 ├── requirements.txt
-├── README.md
-└── assets/
+└── README.md
 ```
 
 ---
 
-# ⚡ Installation
+# 🛠️ Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| Language | Python |
+| Web Framework | Streamlit |
+| Machine Learning | Scikit-Learn |
+| Model | ExtraTrees Regressor |
+| Feature Engineering | ColumnTransformer |
+| Encoding | TargetEncoder, OneHotEncoder, OrdinalEncoder |
+| Data Processing | Pandas, NumPy |
+| Visualization | Plotly |
+| Deployment | Render |
+
+---
+
+# 📊 Dataset
+
+The model is trained on residential property data from **Gurugram**.
+
+Features include
+
+- Property Type
+- Sector
+- Bedrooms
+- Bathrooms
+- Balcony
+- Furnishing Status
+- Age of Property
+- Built-up Area
+- Servant Room
+- Store Room
+- Luxury Category
+- Floor Category
+
+---
+
+# 🚀 Installation
 
 Clone the repository
 
@@ -102,7 +194,7 @@ Clone the repository
 git clone https://github.com/khushraj17/FUNDUS-app.git
 ```
 
-Move into the project directory
+Move into the project
 
 ```bash
 cd FUNDUS-app
@@ -121,89 +213,75 @@ streamlit run app.py
 ```
 
 ---
+<!-- 
+# 📷 Screenshots
 
-# 💻 Modules
+### 🏠 Home
 
-- 🏠 Home
-- 📊 Analytics Dashboard
-- 💰 Price Prediction
-- 📍 Location Search
-- 🤖 Property Recommendation
+_Add Screenshot_
 
 ---
 
-# 📸 Screenshots
+### 💰 Price Prediction
 
-Add screenshots here.
-
-Example:
-
-```
-assets/home.png
-
-assets/analytics.png
-
-assets/prediction.png
-
-assets/recommendation.png
-```
+_Add Screenshot_
 
 ---
 
-# 📈 Future Improvements
+### 📊 Analytics
 
-- Property Images
-- Google Maps Integration
-- User Authentication
-- Wishlist
-- Advanced Filters
-- Personalized User Profiles
-- Deep Learning Recommendation System
-- Real-time Property Listings
-- API Integration
+_Add Screenshot_
 
 ---
 
-# 🎯 Learning Outcomes
+### 🏘️ Recommendation System
 
-This project demonstrates practical implementation of:
+_Add Screenshot_
 
-- Machine Learning
-- Recommendation Systems
-- Feature Engineering
-- Content-Based Filtering
-- Regression Models
-- Data Visualization
-- Streamlit Development
-- Interactive Dashboard Design
-- Model Deployment
+--- -->
 
----
+# 🎯 Future Improvements
 
-# 📦 Requirements
-
-```
-streamlit
-pandas
-numpy
-plotly
-scikit-learn
-```
+- AI Chat Assistant
+- Property Comparison
+- Mortgage Calculator
+- Rental Yield Prediction
+- Interactive Map Search
+- Personalized Investment Recommendations
+- Explainable AI Predictions
 
 ---
 
-# 👨‍💻 Author
+# 👨‍💻 Developer
 
 **Khushraj Rane**
 
 B.Tech Artificial Intelligence & Machine Learning
 
-GitHub: https://github.com/khushraj17
+GitHub:
+https://github.com/khushraj17
+
+LinkedIn:
+https://www.linkedin.com/in/khushraj-rane-772abb30b/
 
 ---
 
-## ⭐ If you like this project
+# ⭐ Support
 
-If you found this project useful, please consider giving it a **⭐ Star** on GitHub. 
+If you found this project useful,
 
-It helps support the project and motivates future improvements. -->
+⭐ Star the repository
+
+🍴 Fork it
+
+🐞 Report issues
+
+💡 Suggest new features
+
+---
+
+<p align="center">
+
+Made with ❤️ using Python, Streamlit and Machine Learning
+
+</p>
