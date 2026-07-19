@@ -30,6 +30,45 @@ Designed as a portfolio-quality project, FUNDUS combines data science, machine l
 
 ---
 
+# 📷 Screenshots
+
+
+<h3 align="center">💰 Property Price Prediction</h3>
+
+<p align="center">
+    <img src="assets/prediction.png" width="900" alt="Price Prediction">
+</p>
+
+<p align="center">
+An end-to-end machine learning pipeline that estimates property prices based on key features including location, built-up area, bedrooms, bathrooms, furnishing status, floor category, luxury amenities, and other property attributes. Predictions are generated instantly through an interactive Streamlit interface.
+</p>
+---
+
+<h3 align="center">Analytics Dashboard</h3>
+
+<p align="center">
+    <img src="assets\Analysis.png" width="900">
+</p>
+
+<p align="center">
+Interactive charts showing price trends, sector analysis, and market insights.
+</p>
+
+---
+
+<h3 align="center">🏘️ Smart Property Recommendation System</h3>
+
+<p align="center">
+    <img src="assets/recommendation.png" width="900">
+</p>
+
+<p align="center">
+Discover similar properties using a hybrid recommendation engine that combines location, property features, and price similarity. Search nearby properties, select any listing, and instantly receive personalized recommendations.
+</p>
+
+---
+
+
 # ✨ Features
 
 ### 💰 Property Price Prediction
@@ -213,32 +252,6 @@ streamlit run app.py
 ```
 
 ---
-<!-- 
-# 📷 Screenshots
-
-### 🏠 Home
-
-_Add Screenshot_
-
----
-
-### 💰 Price Prediction
-
-_Add Screenshot_
-
----
-
-### 📊 Analytics
-
-_Add Screenshot_
-
----
-
-### 🏘️ Recommendation System
-
-_Add Screenshot_
-
---- -->
 
 # 🎯 Future Improvements
 
