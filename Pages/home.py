@@ -1,5 +1,6 @@
 import streamlit as st
 from streamlit_float import *
+# from component.hero import Hero
 
 st.title("🏡 FUNDUS")
 
@@ -141,29 +142,9 @@ techs = [
         "logo": "https://cdn.simpleicons.org/scikitlearn/F7931E"
     },
     {
-        "name": "Extra Trees",
-        "desc": "Regression Model",
-        "logo": "https://cdn.simpleicons.org/scikitlearn/F7931E"
-    },
-    {
         "name": "Plotly",
         "desc": "Interactive Visualization",
         "logo": "https://cdn.simpleicons.org/plotly/3F4F75"
-    },
-    {
-        "name": "Joblib",
-        "desc": "Model Serialization",
-        "logo": "https://cdn.simpleicons.org/python/3776AB"
-    },
-    {
-        "name": "Category Encoder",
-        "desc": "Feature Encoding",
-        "logo": "https://cdn.simpleicons.org/scikitlearn/F7931E"
-    },
-    {
-        "name": "XGBoost",
-        "desc": "Gradient Boosting",
-        "logo": "https://cdn.simpleicons.org/xgboost/EE4C2C"
     }
 ]
 
